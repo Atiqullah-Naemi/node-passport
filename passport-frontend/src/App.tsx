@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Collection from './components/Collection'
 
-const App: React.SFC = () => {
+const App: React.FC = () => {
 	const [posts, setPosts] = useState([])
 
 
