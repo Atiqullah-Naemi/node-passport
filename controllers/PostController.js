@@ -26,7 +26,7 @@ const New = (req, res) => {
 	post.image = req.file.path
 
 	post.save(err => {
-		if (err) res.json(err)
+		if (err) throw new Error(`There was a problem creating new post ${err}`)
 
 		res.json({
 			message: "New post created successfully",

@@ -13,6 +13,9 @@ router.get('/', (req, res) => {
 
 router.route('/posts')
 	.get(PostController.Index)
+
+
+router.route('/posts')
 	.post(UploadController.upload.single('image'), PostController.New)
 
 router.route('/posts/:post_id')
