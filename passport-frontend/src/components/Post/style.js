@@ -7,7 +7,7 @@ export const Post = styled.div`
 	flex-direction: column;
 	width: 30.333%;
 	height: 100%;
-	max-height: 420px;
+	max-height: 520px;
 	margin-right: 12px;
 	margin-bottom: 50px;
 	background-color: ${colours.lightgray};

@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const PostController = require('../../controllers/PostController')
-const UploadController = require('../../controllers/UploadController')
+const UserController = require('../controllers/UserController')
+const PostController = require('../controllers/PostController')
+const UploadController = require('../controllers/UploadController')
 
 
 router.get('/', (req, res) => {
@@ -10,6 +11,8 @@ router.get('/', (req, res) => {
 		message: 'connnected to db'
 	})
 })
+
+router.post('/user/register', UserController.Register)	
 
 router.route('/posts')
 	.get(PostController.Index)
