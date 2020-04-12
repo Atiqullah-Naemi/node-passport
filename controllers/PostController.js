@@ -1,4 +1,5 @@
 const Post = require('../models/Post')
+const User = require('../models/User')
 
 const Index = (req, res) => {
 	Post.find((err, posts) => {
@@ -14,16 +15,17 @@ const Index = (req, res) => {
 			message: "data recieved successfully",
 			data: posts
 		})
-	})
+	}).populate('user', 'name') // get only user name from User object
 		
 }
 
 const New = (req, res) => {
-	let post = new Post()
-
-	post.title = req.body.title
-	post.content = req.body.content
-	post.image = req.file.path
+	const post = new Post({
+		title: req.body.title,
+		content: req.body.content,
+		image: req.file.path,
+		user: req.user._id
+	})
 
 	post.save(err => {
 		if (err) throw new Error(`There was a problem creating new post ${err}`)

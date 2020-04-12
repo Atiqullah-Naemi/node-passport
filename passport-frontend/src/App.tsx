@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Collection from './components/Collection'
 import { GlobalStyle } from './utils/globalStyle'
+import Routes from './Routes'
 
 const App: React.FC = () => {
 	const [posts, setPosts] = useState([])
@@ -20,6 +21,7 @@ const App: React.FC = () => {
 	return (
 		<>
 			<GlobalStyle />
+			<Routes />
 			<Collection posts={posts} />
 		</>
 	)

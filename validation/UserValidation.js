@@ -14,5 +14,16 @@ const RegisterValidation = (data) => {
     return schema.validate(data)
 }
 
+const LoginValidation = data => {
+    const schema = Joi.object({
+        email: Joi.string().min(10).email(),
 
-module.exports = { RegisterValidation }
+        password: Joi.string()
+            .pattern(/^[a-zA-Z0-9]{6,30}$/)
+    })
+
+    return schema.validate(data)
+}
+
+
+module.exports = { RegisterValidation, LoginValidation }

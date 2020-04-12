@@ -17,6 +17,13 @@ const UserSchema = mongoose.Schema({
 		required: true,
 		min: 6
 	},
+	profile: {
+		type: String
+	},
+	posts: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Post'
+	},
 	date: {
 		type: Date,
 		default: Date.now
